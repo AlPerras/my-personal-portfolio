@@ -2,9 +2,9 @@
 @import "node_modules/modern-normalize/modern-normalize.css";
 * {
   margin: 0;
+  line-height: calc(1em + 0.5rem);
 }
 body {
-  line-height: calc(1em + 0.5rem);
   -webkit-font-smoothing: antialiased;
 }
 img,
@@ -47,14 +47,127 @@ ul[role="list"] {
   padding-inline: 0;
 }
 
+/* general styling */
+:root {
+  color-scheme: light dark;
+  --text: light-dark(#050607, #f9fafb);
+  --background: light-dark(#fafbfd, #010204);
+  --primary: light-dark(#3e7ac9, #3671bf);
+  --secondary: light-dark(#87b4ee, #113e78);
+  --accent: light-dark(#4392f9, #0655bc);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  margin: 0 4rem;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+h4 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+}
+h5 {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+small {
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+}
+
 /* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
+.logo {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--primary);
+}
 
+nav ul {
+  display: flex;
+  gap: 2.5rem;
+}
 
-/* Main */
+nav ul a {
+  font-size: clamp(1.2rem, 2dvw, 2rem);
+  color: var(--accent);
+  font-weight: 700;
+}
 
+/* home section */
+#home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 85vmin;
+  gap: 2rem;
+}
 
+.home-content {
+  flex: 1 1 500px;
+}
+
+.home-content h2 {
+  color: var(--primary);
+}
+
+.home-content p {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+}
+
+.home-content button {
+  background-color: var(--primary);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-content button:hover {
+  background-color: var(--accent);
+  transform: scale(1.05);
+}
+
+.home-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.home-img img {
+  width: 100%;
+  height: auto;
+  background-color: var(--primary);
+  border-radius: 16px;
+  overflow: hidden;
+}
 
 /* Footer */
-
-
