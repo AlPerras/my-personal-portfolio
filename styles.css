@@ -77,8 +77,8 @@ a {
   color: inherit;
 }
 
-section {
-  margin: 0 4rem;
+main {
+  margin: 0 4dvw;
 }
 
 h1 {
@@ -380,7 +380,7 @@ nav ul a:hover {
 
 .home-content button:hover {
   background-color: var(--accent);
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .home-img {
@@ -397,5 +397,85 @@ nav ul a:hover {
   border-radius: 16px;
   overflow: hidden;
 }
+
+/* projects section */
+#projects {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.project-card {
+  position: relative;
+  width: 100%;
+}
+.project-description {
+  width: 22.5dvw;
+  height: 37dvw;
+  border-radius: 20px;
+  position: absolute;
+  top: 2dvh;
+  right: 1dvw;
+  font-size: 1.8dvw;
+}
+
+#projects * {
+  line-height: normal;
+}
+
+.project-description p {
+  margin-bottom: 1em;
+}
+
+.project-title {
+  position: absolute;
+  top: -0.5vw;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38dvw;
+  font-size: 2dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1vw;
+  /* should be using calculation 2.5vw - gap distance */
+  border-radius: 20px;
+  background-color: var(--primary);
+}
+.project-tag {
+  position: absolute;
+  right: -0.5dvw;
+  bottom: -0.5dvw;
+  width: 18dvw;
+  border-radius: 20px;
+  background-color: var(--primary);
+  padding: 1.25dvw;
+  text-align: center;
+}
+.tech-stack {
+  font-size: 1.5vw;
+  margin-bottom: 0.5vw;
+}
+.tech-stack i {
+  margin-left: 0.5dvw;
+}
+
+.project-tag button {
+  font-size: 1vw;
+  padding: 0.5em 1em;
+  border-radius: 50px;
+  border: none;
+  background-color: var(--secondary);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-tag button:hover {
+  background-color: var(--accent);
+  transform: scale(1.1);
+}
+
+
 
 /* Footer */
