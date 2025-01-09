@@ -66,3 +66,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
+
+function sendMail() {
+  let parms = {
+    name: document.getElementById("name").value,
+    subject: document.getElementById("subject").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+  emailjs
+    .send("service_3jpbdpg", "template_lvfwiqa", parms)
+    .then(alert("Email Sent!"));
+}

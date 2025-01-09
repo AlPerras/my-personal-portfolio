@@ -12,6 +12,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "YTKVoLI7593DmZmDG",
+        });
+      })();
+    </script>
   </head>
   <body>
     <header>
@@ -315,6 +326,10 @@
             <input type="text" id="name" name="name" required />
           </div>
           <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+          <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" required />
           </div>
@@ -322,7 +337,9 @@
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="submit-btn">Send Message</button>
+          <button type="submit" class="submit-btn" onclick="sendMail()">
+            Send Message
+          </button>
         </form>
       </section>
     </main>
