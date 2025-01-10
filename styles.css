@@ -50,17 +50,17 @@ ul[role="list"] {
 /* general styling */
 :root[data-theme="light"] {
   color-scheme: light;
-  --text: #050607;
-  --background: #fafbfd;
-  --primary: #3e7ac9;
-  --secondary: #87b4ee;
-  --accent: #4392f9;
+  --text: #1d1d1d;
+  --background: #dddddd;
+  --primary: #3466a7;
+  --secondary: #1961c0;
+  --accent: #377bd5;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --text: #f9fafb;
-  --background: #010204;
+  --text: #e9eaeb;
+  --background: #1d1d1d;
   --primary: #3671bf;
   --secondary: #113e78;
   --accent: #0655bc;
@@ -426,17 +426,25 @@ nav ul a:hover {
   justify-content: center;
   align-items: center;
   margin: auto;
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-  /* border: 20px; */
+  background-color: var(--primary);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .home-img img {
   width: 100%;
   height: auto;
-  background-color: var(--primary);
   border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1013px) {
+  .home-img {
+    flex-basis: 600px;
+  }
+  .home-img img {
+    max-width: 400px;
+  }
 }
 
 /* projects section */
@@ -514,15 +522,19 @@ nav ul a:hover {
 
 .project-tag button {
   font-size: 1vw;
+  font-weight: 600;
   padding: 0.5em 1em;
   border-radius: 50px;
   border: none;
-  background-color: var(--secondary);
+  background-color: var(--text);
+  color: var(--background);
   transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
 }
 
 .project-tag button:hover {
-  background-color: var(--accent);
+  background-color: var(--background);
+  color: var(--primary);
   transform: scale(1.1);
 }
 
@@ -557,6 +569,7 @@ nav ul a:hover {
 
 .top-profile p {
   color: var(--secondary);
+  font-weight: 600;
 }
 
 .top-profile img {
@@ -567,7 +580,7 @@ nav ul a:hover {
 }
 
 .middle-profile p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 
@@ -601,8 +614,20 @@ nav ul a:hover {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 2rem;
-  max-width: 800px;
   opacity: 0.9;
+}
+
+@media (max-width: 1026px) {
+  .profile {
+    flex-basis: 80%;
+    min-height: revert;
+    gap: 1rem;
+  }
+  .top-profile,
+  .middle-profile,
+  .social-icons {
+    max-width: 270px;
+  }
 }
 
 .slider {
