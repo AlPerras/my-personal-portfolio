@@ -1,9 +1,7 @@
-// Navigation
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");
 const links = document.querySelectorAll("#nav-links li a");
 
-// Smooth scroll for navigation
 links.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -14,7 +12,6 @@ links.forEach((link) => {
       behavior: "smooth",
     });
 
-    // Close mobile menu if open
     navLinks.classList.remove("active");
     hamburger.classList.remove("active");
   });
@@ -29,19 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.querySelector('input[name="color-scheme"]');
   const root = document.documentElement;
 
-  // Function to set the theme
   const setTheme = (theme) => {
     root.setAttribute("data-theme", theme);
     themeToggle.checked = theme === "dark";
   };
 
-  // Check for saved theme in localStorage
   const savedTheme = localStorage.getItem("theme");
 
   if (savedTheme) {
     setTheme(savedTheme);
   } else {
-    // Use system preference if no saved theme
     const systemPreference = window.matchMedia("(prefers-color-scheme: dark)")
       .matches
       ? "dark"
@@ -49,14 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
     setTheme(systemPreference);
   }
 
-  // Listen for theme toggle changes
   themeToggle.addEventListener("change", () => {
     const newTheme = themeToggle.checked ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
   });
 
-  // Optional: Listen for system preference changes
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", (e) => {
@@ -67,14 +59,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-function sendMail() {
-  let parms = {
-    name: document.getElementById("name").value,
-    subject: document.getElementById("subject").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
+const contactForm = document.querySelector("#contact-form");
+const submitBtn = document.querySelector(".submit-btn");
+const name = document.querySelector("#name");
+const email = document.querySelector("#email");
+const message = document.querySelector("#message");
+
+const publicKey = "YTKVoLI7593DmZmDG";
+const serviceID = "service_zjs1s7x";
+const templateID = "template_frkz7tk";
+
+emailjs.init(publicKey);
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  submitBtn.innerText = "Sending..";
+  const inputField = {
+    name: name.value,
+    email: email.value,
+    message: message.value,
   };
-  emailjs
-    .send("service_3jpbdpg", "template_lvfwiqa", parms)
-    .then(alert("Email Sent!"));
-}
+  emailjs.send(serviceID, templateID, inputField).then(
+    () => {
+      submitBtn.innerText = "Message Sent Successfully";
+      name.value = "";
+      email.value = "";
+      message.value = "";
+    },
+    (error) => {
+      console.log(error);
+      submitBtn.innerText = "Something went wrong";
+    }
+  );
+});
