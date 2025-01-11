@@ -59,7 +59,7 @@ ul[role="list"] {
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --text: #e9eaeb;
+  --text: #dddddd;
   --background: #1d1d1d;
   --primary: #3671bf;
   --secondary: #113e78;
@@ -499,9 +499,10 @@ nav ul a:hover {
   right: -0.5%;
   bottom: -1%;
   width: 20%;
+  height: 9%;
   border-radius: 1.5dvw;
   background-color: var(--primary);
-  padding: 1.25dvw;
+  padding: 1.25%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .tech-stack {
@@ -539,40 +540,8 @@ nav ul a:hover {
   transform: scale(1.1);
 }
 
-/* .small {
+.small {
   display: none;
-} */
-
-.small .project-description {
-  position: absolute;
-  bottom: 1%;
-  left: 1%;
-  top: auto;
-  width: 69%;
-  height: auto;
-  border: none;
-  border-radius: 2.5dvw;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: var(--background);
-  padding: 2%;
-}
-
-.small p {
-  margin-bottom: 2%;
-}
-
-.small .project-title {
-  width: 90%;
-  left: 50%;
-}
-
-.small .project-tag {
-  bottom: 4%;
-  right: 2%;
-  height: 8%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 /* about section */
@@ -666,6 +635,9 @@ nav ul a:hover {
   .social-icons {
     max-width: 270px;
   }
+  .about-content {
+    width: 100%;
+  }
 }
 
 .slider {
@@ -733,7 +705,7 @@ nav ul a:hover {
 
 .contact-form {
   max-width: 600px;
-  margin: 0rem auto;
+  margin: 2rem auto;
   padding: 2rem;
   background-color: color-mix(
     in srgb,
