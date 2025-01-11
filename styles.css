@@ -454,9 +454,10 @@ nav ul a:hover {
   display: flex;
   flex-direction: column;
 }
+
 .project-card {
   position: sticky;
-  top: 4%;
+  top: 3%;
   width: 100%;
   margin-bottom: 4rem;
 }
@@ -495,13 +496,12 @@ nav ul a:hover {
 }
 .project-tag {
   position: absolute;
-  right: -1%;
+  right: -0.25%;
   bottom: -1%;
   width: 18dvw;
   border-radius: 1.5dvw;
   background-color: var(--primary);
   padding: 1.25dvw;
-  text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .tech-stack {
@@ -517,12 +517,11 @@ nav ul a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5dvw;
+  gap: 1dvw;
 }
 
 .project-tag button {
   font-size: 1vw;
-  font-weight: 600;
   padding: 0.5em 1em;
   border-radius: 50px;
   border: none;
@@ -530,12 +529,31 @@ nav ul a:hover {
   color: var(--background);
   transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .project-tag button:hover {
   background-color: var(--background);
   color: var(--primary);
   transform: scale(1.1);
+}
+
+.small {
+  position: absolute;
+  bottom: 0%;
+  left: 2%;
+  top: auto;
+  width: 72%;
+  height: auto;
+  /* border: 1px solid black;
+  border-radius: 20px;
+  background-color: var(--background);
+  padding: 10px; */
+}
+
+.small p {
+  margin-bottom: 2%;
 }
 
 /* about section */
@@ -545,6 +563,7 @@ nav ul a:hover {
   position: relative;
   flex-wrap: wrap;
   gap: 5rem;
+  margin-bottom: 4rem;
 }
 
 .profile {
