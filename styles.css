@@ -496,9 +496,9 @@ nav ul a:hover {
 }
 .project-tag {
   position: absolute;
-  right: -0.25%;
+  right: -0.5%;
   bottom: -1%;
-  width: 18dvw;
+  width: 20%;
   border-radius: 1.5dvw;
   background-color: var(--primary);
   padding: 1.25dvw;
@@ -539,21 +539,40 @@ nav ul a:hover {
   transform: scale(1.1);
 }
 
-.small {
+/* .small {
+  display: none;
+} */
+
+.small .project-description {
   position: absolute;
-  bottom: 0%;
-  left: 2%;
+  bottom: 1%;
+  left: 1%;
   top: auto;
-  width: 72%;
+  width: 69%;
   height: auto;
-  /* border: 1px solid black;
-  border-radius: 20px;
-  background-color: var(--background);
-  padding: 10px; */
+  border: none;
+  border-radius: 2.5dvw;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--background);
+  padding: 2%;
 }
 
 .small p {
   margin-bottom: 2%;
+}
+
+.small .project-title {
+  width: 90%;
+  left: 50%;
+}
+
+.small .project-tag {
+  bottom: 4%;
+  right: 2%;
+  height: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* about section */
