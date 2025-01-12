@@ -472,7 +472,8 @@ nav ul a:hover {
   position: absolute;
   top: 3%;
   right: 2%;
-  font-size: 1.8dvw;
+  /* font-size: 1.8dvw; */
+  font-size: clamp(12px, 1.8vw, 36px);
 }
 
 .project-description p {
@@ -499,14 +500,14 @@ nav ul a:hover {
   right: -0.5%;
   bottom: -1%;
   width: 20%;
-  height: 9%;
   border-radius: 1.5dvw;
   background-color: var(--primary);
   padding: 1.25%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .tech-stack {
-  font-size: 1.5vw;
+  /* font-size: 1.5vw; */
+  font-size: clamp(16px, 1.5vw, 32px);
   margin-bottom: 0.5vw;
 }
 
@@ -523,6 +524,7 @@ nav ul a:hover {
 
 .project-tag button {
   font-size: 1vw;
+  /* font-size: clamp(14px, 1vw, 24px); */
   padding: 0.5em 1em;
   border-radius: 50px;
   border: none;
@@ -536,12 +538,80 @@ nav ul a:hover {
 
 .project-tag button:hover {
   background-color: var(--background);
-  color: var(--primary);
+  color: var(--text);
   transform: scale(1.1);
 }
 
 .small {
   display: none;
+}
+/* Maybe test rusing the svg and then targetting the svg 
+display directly in the small section! */
+@media (max-width: 768px) {
+  .large {
+    display: none;
+  }
+
+  .small {
+    display: revert;
+  }
+  .small.project-card {
+    height: 100vw;
+    max-height: 30em;
+    background-color: var(--primary);
+    border-radius: 20px;
+    padding: 3dvw 2dvw 0dvw;
+    overflow: hidden;
+  }
+
+  .project-card.small img {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .small-info {
+    font-size: 2.5dvw;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #dddddd;
+    padding: 1.25em 1.25em 0.85em;
+    border-radius: 30px 30px 20px 20px;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    display: flex;
+    gap: 2dvw;
+  }
+
+  .small-info span {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .small-tag {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .small-tag .tech-stack {
+    font-size: 12px;
+  }
+  .small-tag button {
+    font-size: 12px;
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--text);
+    color: var(--background);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: var(--background);
+    color: var(--text);
+    transform: scale(1.1);
+  }
 }
 
 /* about section */
