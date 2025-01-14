@@ -83,11 +83,11 @@ a {
 }
 
 main {
-  margin: 0 4vmax;
+  margin: 0 4dvw;
 }
 
 section {
-  margin-bottom: 4vmin;
+  margin-bottom: 4rem;
   min-height: fit-content;
 }
 
@@ -154,7 +154,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3dvw;
 }
 
 nav ul {
@@ -458,8 +458,6 @@ nav ul a:hover {
 .project-card {
   position: sticky;
   top: 3%;
-  width: 100%;
-  margin-bottom: 4rem;
 }
 
 #projects * {
@@ -472,7 +470,6 @@ nav ul a:hover {
   position: absolute;
   top: 3%;
   right: 2%;
-  /* font-size: 1.8dvw; */
   font-size: clamp(12px, 1.8vw, 36px);
 }
 
@@ -497,18 +494,17 @@ nav ul a:hover {
 }
 .project-tag {
   position: absolute;
-  right: -0.5%;
+  right: -1%;
   bottom: -1%;
-  width: 20%;
+  width: 21%;
   border-radius: 1.5dvw;
   background-color: var(--primary);
   padding: 1.25%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .tech-stack {
-  /* font-size: 1.5vw; */
-  font-size: clamp(16px, 1.5vw, 32px);
-  margin-bottom: 0.5vw;
+  font-size: clamp(14px, 1.7dvw, 32px);
+  margin-bottom: 0.8dvw;
 }
 
 .tech-stack i {
@@ -523,8 +519,7 @@ nav ul a:hover {
 }
 
 .project-tag button {
-  font-size: 1vw;
-  /* font-size: clamp(14px, 1vw, 24px); */
+  font-size: clamp(7px, 1dvw, 24px);
   padding: 0.5em 1em;
   border-radius: 50px;
   border: none;
@@ -545,9 +540,17 @@ nav ul a:hover {
 .small {
   display: none;
 }
-/* Maybe test rusing the svg and then targetting the svg 
-display directly in the small section! */
-@media (max-width: 768px) {
+
+@media (min-width: 768px) {
+  .project-card {
+    margin-bottom: 4rem;
+  }
+  #projects .project-card.large:nth-of-type(2) {
+    margin-bottom: 0rem;
+  }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
   .large {
     display: none;
   }
@@ -555,20 +558,14 @@ display directly in the small section! */
   .small {
     display: revert;
   }
-  .small.project-card {
-    height: 100vw;
-    max-height: 30em;
-    background-color: var(--primary);
-    border-radius: 20px;
-    padding: 3dvw 2dvw 0dvw;
-    overflow: hidden;
+
+  .small-img {
+    display: none;
   }
 
-  .project-card.small img {
-    margin: auto;
-    width: 100%;
-    height: 100%;
+  .reg-img {
     object-fit: cover;
+    background-color: var(--primary);
     border-radius: 20px;
   }
 
@@ -586,31 +583,66 @@ display directly in the small section! */
   }
 
   .small-info span {
+    font-size: 3dvw;
     font-weight: 700;
     text-transform: uppercase;
+    color: var(--primary);
   }
+
   .small-tag {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
   .small-tag .tech-stack {
-    font-size: 12px;
+    font-size: 14px;
   }
+
   .small-tag button {
     font-size: 12px;
     padding: 0.5em 1em;
     border-radius: 50px;
     border: none;
-    background-color: var(--text);
-    color: var(--background);
+    background-color: var(--primary);
+    color: var(--text);
     transition: background-color 0.3s ease, transform 0.2s ease;
     cursor: pointer;
   }
-  button:hover {
-    background-color: var(--background);
-    color: var(--text);
+
+  .small-tag button:hover {
+    background-color: var(--accent);
     transform: scale(1.1);
+  }
+
+  .project-card {
+    margin-bottom: 4rem;
+  }
+
+  #projects .project-card.small:nth-of-type(4) {
+    margin-bottom: 0rem;
+  }
+}
+
+@media (max-width: 508px) {
+  .reg-img {
+    display: none;
+  }
+  .small.project-card {
+    height: 100dvw;
+    max-height: 30em;
+    background-color: var(--primary);
+    border-radius: 20px;
+    padding: 3dvw 2dvw 0dvw;
+    overflow: hidden;
+  }
+  .small-img {
+    display: revert;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 20px;
   }
 }
 
@@ -621,7 +653,6 @@ display directly in the small section! */
   position: relative;
   flex-wrap: wrap;
   gap: 5rem;
-  margin-bottom: 4rem;
 }
 
 .profile {
@@ -679,6 +710,10 @@ display directly in the small section! */
   border-radius: 0.5rem;
 }
 
+.about-content h2 {
+  margin-bottom: 2rem;
+}
+
 .about-content {
   flex: 1 1 500px;
   display: flex;
@@ -690,11 +725,14 @@ display directly in the small section! */
 .about-content p {
   font-size: 1.5rem;
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 1em;
   opacity: 0.9;
 }
 
 @media (max-width: 1026px) {
+  #about {
+    gap: 4dvh;
+  }
   .profile {
     flex-basis: 80%;
     min-height: revert;
