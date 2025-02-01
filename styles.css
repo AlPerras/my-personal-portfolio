@@ -861,6 +861,10 @@ ul li:nth-child(4) {
   box-sizing: border-box;
 }
 
+#contact {
+  margin-bottom: -4rem;
+}
+
 .contact-form {
   max-width: 600px;
   margin: 2rem auto;
@@ -937,15 +941,18 @@ ul li:nth-child(4) {
   position: sticky;
   bottom: 28px;
   border: 2px solid var(--accent);
-  border-radius: 1dvw;
+  border-radius: 14px;
   width: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--background);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .call-container img {
+  width: clamp(50px, 8vw, 60px);
+  height: auto;
   padding: 6px 8px;
 }
 
@@ -956,7 +963,7 @@ ul li:nth-child(4) {
 }
 
 .text-box {
-  font-size: clamp(16px, 1.2dvw, 3rem);
+  font-size: clamp(14px, 2vw, 18px);
   font-weight: 600;
   padding: 6px 8px;
   margin: auto;
@@ -972,12 +979,13 @@ ul li:nth-child(4) {
 
 .text-box a:hover i {
   color: var(--accent);
+  transform: translate(3px, -3px);
 }
 
 .text-box i {
   margin-left: 0.5ch;
   color: var(--secondary);
-  transition: all 0.1s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 /* Footer */
